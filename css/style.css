@@ -58,3 +58,10 @@ main {
   font-size: clamp(8px, 5vw, 2rem);
   box-shadow: -2px 3px 0#888, -3.4px 5.3px 0 #333;
 }
+.btn{
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  width: 65%;
+  transform: translate(-57%, 0);
+}
