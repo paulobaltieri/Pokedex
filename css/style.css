@@ -48,10 +48,19 @@ main {
   left: 13.5%;
 }
 .tipoPokemon {
+  text-align: left;
   position: absolute;
-  width: 60%;
+  width: 40%;
   top: 77%;
   left: 13.5%;
+  padding: 2.6%;
+  border: 2px solid #333;
+  border-radius: 5px;
+  font-weight: 600;
+  color: #3a444d;
+  font-size: clamp(8px, 5vw, 2rem);
+  box-shadow: -2px 3px 0#888, -3.4px 5.3px 0 #333;
+  background-color: rgb(248, 162, 3);
 }
 .inputPesquisar {
   width: 100%;
@@ -64,19 +73,7 @@ main {
   font-size: clamp(8px, 5vw, 2rem);
   box-shadow: -2px 3px 0#888, -3.4px 5.3px 0 #333;
 }
-.inputTipo {
-  width: 60%;
-  padding: 4%;
-  margin-right: 100%;
-  outline: none;
-  border: 2px solid #333;
-  border-radius: 5px;
-  font-weight: 600;
-  color: #3a444d;
-  font-size: clamp(8px, 5vw, 2rem);
-  box-shadow: -2px 3px 0#888, -3.4px 5.3px 0 #333;
-  background-color: rgb(248, 162, 3);
-}
+
 /* .btn {
   position: absolute;
   bottom: 10%;

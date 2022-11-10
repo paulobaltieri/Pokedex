@@ -30,7 +30,6 @@ form.addEventListener('submit', async (event) => {
 
 })
 
-
 const imgFunc = (dados) => {
     const pokemonId = dados.id
     const requestImg = new Request(`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${pokemonId}.gif`)
