@@ -1,17 +1,15 @@
+import introPokedex from "./effectPokedex.js"
+
 const form = document.querySelector('.form')
 const inputPesquisar = document.querySelector('.inputPesquisar')
 const pokemonNumber = document.querySelector('.pokemonNumber')
 const pokemonName = document.querySelector('.pokemonName')
 const pokemonImage = document.querySelector('.pokemonImage')
-const btnPrevious = document.querySelector('.btn-prev')
 const pokemonTipo = document.querySelector('.inputTipo')
-const btnNext = document.querySelector('.btn-next')
-
 
 form.addEventListener('submit', async (event) => {
     event.preventDefault()
     const pokemon = inputPesquisar.value
-
     const pokeApi = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
     const data = await pokeApi.json()
     const pokemonType = data.types
@@ -41,3 +39,4 @@ const imgFunc = (dados) => {
         })
 
 }
+
