@@ -1,5 +1,7 @@
-import audioPokedex from "./effectPokedex.js"
+import introducao from "./effectPokedex.js"
+import erro from "./effectPokedex.js"
 import pokemonAudio from "./audio.js"
+
 
 
 const form = document.querySelector('.form')
@@ -15,6 +17,7 @@ form.addEventListener('submit', async (event) => {
     const pokeApi = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
     const data = await pokeApi.json()
     const pokemonType = data.types
+    console.log(pokemon)
     pokemonName.innerHTML = data.name
     pokemonNumber.innerHTML = data.id
     const pokeType = (value) => {
@@ -23,13 +26,19 @@ form.addEventListener('submit', async (event) => {
             return element
         }
     }
-    console.log(pokeType(pokemonType))
-    const teste = pokeType(pokemonType)
-    pokemonTipo.innerHTML = teste
+    const tipoPokemon = pokeType(pokemonType)
+    pokemonTipo.innerHTML = tipoPokemon
     imgFunc(data)
     pokemonAudio(pokemon)
-    /* audioPokedex() */
+    const teste = () => {
+        inputPesquisar.disabled = true
+    }
+    const teste2 = () => {
+        inputPesquisar.disabled = false
 
+    }
+    setTimeout(teste, 100)
+    setTimeout(teste2, 15000)
 })
 
 const imgFunc = (dados) => {
