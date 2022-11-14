@@ -1,4 +1,6 @@
-import introPokedex from "./effectPokedex.js"
+import audioPokedex from "./effectPokedex.js"
+import pokemonAudio from "./audio.js"
+
 
 const form = document.querySelector('.form')
 const inputPesquisar = document.querySelector('.inputPesquisar')
@@ -25,6 +27,8 @@ form.addEventListener('submit', async (event) => {
     const teste = pokeType(pokemonType)
     pokemonTipo.innerHTML = teste
     imgFunc(data)
+    pokemonAudio(pokemon)
+    /* audioPokedex() */
 
 })
 
