@@ -13,7 +13,7 @@ const pokemonTipo = document.querySelector('.inputTipo')
 
 form.addEventListener('submit', async (event) => {
     event.preventDefault()
-    const pokemon = inputPesquisar.value
+    const pokemon = inputPesquisar.value.toLowerCase()
     const pokeApi = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
     const data = await pokeApi.json()
     const pokemonType = data.types
