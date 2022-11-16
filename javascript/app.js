@@ -29,15 +29,15 @@ form.addEventListener('submit', async (event) => {
     pokemonTipo.innerHTML = tipoPokemon
     imgFunc(data)
     pokemonAudio(pokemon)
-    const teste = () => {
+    const blockInput = () => {
         inputPesquisar.disabled = true
     }
-    const teste2 = () => {
+    const unlockInput = () => {
         inputPesquisar.disabled = false
 
     }
-    setTimeout(teste, 100)
-    setTimeout(teste2, 15000)
+    setTimeout(blockInput, 100)
+    setTimeout(unlockInput, 15000)
 })
 
 const imgFunc = (dados) => {
