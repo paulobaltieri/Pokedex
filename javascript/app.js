@@ -3,7 +3,6 @@ import erro from "./effectPokedex.js"
 import pokemonAudio from "./audio.js"
 
 
-
 const form = document.querySelector('.form')
 const inputPesquisar = document.querySelector('.inputPesquisar')
 const pokemonNumber = document.querySelector('.pokemonNumber')
