@@ -1,6 +1,7 @@
 import introducao from "./effectPokedex.js"
 import erro from "./effectPokedex.js"
 import pokemonAudio from "./audio.js"
+import soundErro from "./effectPokedex.js"
 
 
 const form = document.querySelector('.form')
@@ -40,6 +41,7 @@ form.addEventListener('submit', async (event) => {
         setTimeout(blockInput, 100)
         setTimeout(unlockInput, 15000)
     } catch (error) {
+        soundErro()
         alert('Pokemon não existe')
     }
 
