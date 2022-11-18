@@ -3,10 +3,4 @@ const soundErro = () => {
     audioErro.play()
 }
 
-const introPokedex = () => {
-    const audio1 = new Audio('./audios/intoPokedex.mp3')
-    audio1.play()
-}
-
-
-export default { introPokedex, soundErro }
+export default soundErro 

@@ -11,33 +11,38 @@ const pokemonImage = document.querySelector('.pokemonImage')
 const pokemonTipo = document.querySelector('.inputTipo')
 
 form.addEventListener('submit', async (event) => {
-    event.preventDefault()
-    const pokemon = inputPesquisar.value.toLowerCase()
-    const pokeApi = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
-    const data = await pokeApi.json()
-    const pokemonType = data.types
-    console.log(pokemon)
-    pokemonName.innerHTML = data.name
-    pokemonNumber.innerHTML = data.id
-    const pokeType = (value) => {
-        for (let i = 0; i < value.length; i++) {
-            const element = value[i].type.name;
-            return element
+    try {
+        event.preventDefault()
+        const pokemon = inputPesquisar.value.toLowerCase()
+        const pokeApi = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
+        const data = await pokeApi.json()
+        const pokemonType = data.types
+        console.log(pokemon)
+        pokemonName.innerHTML = data.name
+        pokemonNumber.innerHTML = data.id
+        const pokeType = (value) => {
+            for (let i = 0; i < value.length; i++) {
+                const element = value[i].type.name;
+                return element
+            }
         }
-    }
-    const tipoPokemon = pokeType(pokemonType)
-    pokemonTipo.innerHTML = tipoPokemon
-    imgFunc(data)
-    pokemonAudio(pokemon)
-    const blockInput = () => {
-        inputPesquisar.disabled = true
-    }
-    const unlockInput = () => {
-        inputPesquisar.disabled = false
+        const tipoPokemon = pokeType(pokemonType)
+        pokemonTipo.innerHTML = tipoPokemon
+        imgFunc(data)
+        pokemonAudio(pokemon)
+        const blockInput = () => {
+            inputPesquisar.disabled = true
+        }
+        const unlockInput = () => {
+            inputPesquisar.disabled = false
 
+        }
+        setTimeout(blockInput, 100)
+        setTimeout(unlockInput, 15000)
+    } catch (error) {
+        alert('Pokemon não existe')
     }
-    setTimeout(blockInput, 100)
-    setTimeout(unlockInput, 15000)
+
 })
 
 const imgFunc = (dados) => {
