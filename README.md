@@ -15,6 +15,7 @@ O sistema tem como objetivo, realizar consulta a uma *API* e retornar os dados s
 
 Site para acessar o projeto:
 https://pokedexestudy.netlify.app/
+
 Site da API que está sendo utilizado para o projeto:
 https://pokeapi.co/
 
